@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner" style="background-image: url(<%= image_path('treehouse.jpg') %>)">
+  <div class="container">
+    <h1>Plan your next adventure</h1>
+      <div class="search-form">
+        <form action="search" class="form-inline">
+          <input type="text" placeholder="Your destination">
+          <input type="date" placeholder="DD/MM/YYYY">
+          <input type="number" placeholder="Number of Guests">
+          <input type="submit">
+        </form>
+      </div>
+  </div>
+
+</div>
+
+
+
+
