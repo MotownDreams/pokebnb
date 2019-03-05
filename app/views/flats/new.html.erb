@@ -1,6 +1,8 @@
-<h1>flats#new</h1>
 <p>List Your Flat!</p>
 <% simple_form_for(@flat) do |f| %>
   <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price_per_night %>
+  <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
