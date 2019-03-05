@@ -4,6 +4,14 @@
     <%= image_tag "airbnb-logo.png", height: 50 %>
   <% end %>
 
+  <!-- Search field here -->
+  <div class="search">
+    <form action=<%= flats_path %> class="form-inline">
+      <input type="text" name="query" placeholder="Search city..." class="form-control">
+      <input type="submit" id="submit" value="Search" class="btn btn-danger">
+    </form>
+  </div>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -55,8 +63,6 @@
     </div>
   </div>
 
-<!-- Search field here -->
-  <input type="text" placeholder="Search...">
 
 </div>
 
