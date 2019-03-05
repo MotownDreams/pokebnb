@@ -1,5 +1,15 @@
 // Specific CSS for your home-page
 .search-form {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  form[action=search] {
+    display: flex;
+    justify-content: center;
+  }
+  input[type=submit] {
+    margin-left: 5px;
+  }
 }
