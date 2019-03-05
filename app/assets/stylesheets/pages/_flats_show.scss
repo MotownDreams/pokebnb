@@ -1,3 +1,35 @@
+// Pictures:
+
+.pictures-banner {
+  height: 400px;
+  width: 100%;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+}
+
+.apt-pic {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#picture1 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+
+.view-photos {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+// Description:
+
 .flat-description {
   margin-left: auto;
   margin-right: auto;
@@ -13,13 +45,21 @@
   margin: 10px;
 }
 
-.picture {
-  position: relative;
-  height: 40px;
+.price_night {
+  border-bottom: 1px solid #04536c;
+  margin: 0px 50px;
 }
 
-.view-photos {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
+.price_total {
+  border-bottom: 1px solid #04536c;
+  margin: 0px 50px;
+}
+
+#booking-dates {
+  margin: 20px;
+  padding-bottom: 10px;
+}
+
+.request-btn {
+  margin: 20px;
 }
