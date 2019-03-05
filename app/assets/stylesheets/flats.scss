@@ -1,14 +1,18 @@
 .index-flex {
   display: flex;
-  margin-left: 30px;
 }
 
 #map {
-  flex: 0 0 500px;
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  // position: absolute;
 }
 
 .flats-list {
   flex: 1 1 auto;
+  padding: 0 30px;
 }
 
 .flats-card {
