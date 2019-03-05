@@ -1,8 +1,14 @@
-<p>List Your Flat!</p>
-<% simple_form_for(@flat) do |f| %>
-  <%= f.input :name %>
+<div class="container" >
+  <h1 class="text-center">List Your Flat! </h1>
+  <div class="row">
+    <div class="col">
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.input :name, input_html: { class: "form-control" } %>
   <%= f.input :location %>
   <%= f.input :price_per_night %>
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
+    <div>
+  <div>
+</div>
