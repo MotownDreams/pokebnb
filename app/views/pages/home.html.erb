@@ -1,16 +1,14 @@
-<div class="home-banner" style="background-image: url(<%= image_path('treehouse.jpg') %>)">
-  <div class="container">
-    <h1>Plan your next adventure</h1>
-      <div class="search-form">
-        <form action="search" class="form-inline">
-          <input type="text" placeholder="Your destination">
-          <input type="date" placeholder="DD/MM/YYYY">
-          <input type="number" placeholder="Number of Guests">
-          <input type="submit">
-        </form>
-      </div>
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url(<%= image_path('treehouse.jpg') %>)">
+  <div class="banner-content">
+    <h1 class="text-center">Plan your next adventure</h1>
+    <div class="search-form">
+      <form action="search" class="form-inline">
+        <input type="text" class="form-control" placeholder="Your destination">
+        <input type="number" class="form-control" placeholder="Number of Guests">
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </div>
   </div>
-
 </div>
 
 
