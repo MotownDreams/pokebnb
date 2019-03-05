@@ -1,0 +1,29 @@
+<div>
+  <div id="room">
+
+    <div class="pictures-banner">
+      <div class="picture" style="background-image: url(<%= image_path('treehouse.jpg') %>)">
+        <button class="view-photos"> View Photos </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container flat-description">
+        <div class="col-sm-8">
+          <h1> This is an apartment </h1>
+          <h2> <%= @flat.location %> </h2>
+          <p> <%= @flat.description %> </p>
+        </div>
+        <div class="col-sm-4">
+          <div class="booking-box">
+            <h2>Price per night</h2>
+            <h2>Dates</h2>
+            <h2>Guests</h2>
+            <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
