@@ -1,25 +1,55 @@
 <div>
   <div id="room">
 
-    <div class="pictures-banner">
-      <div class="picture" style="background-image: url(<%= image_path('treehouse.jpg') %>)">
-        <button class="view-photos"> View Photos </button>
-      </div>
+    <div class="grid pictures-banner">
+
+        <div id="picture1" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+
+        </div>
+
+          <div id="picture2" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+          </div>
+          <div id="picture3" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+          </div>
+
+          <div id="picture4" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+          </div>
+          <div id="picture5" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+          </div>
+
+      <button class="view-photos"> View Photos </button>
     </div>
 
     <div class="row">
       <div class="container flat-description">
         <div class="col-sm-8">
-          <h1> This is an apartment </h1>
+          <h1> <%= @flat.name %> </h1>
           <h2> <%= @flat.location %> </h2>
           <p> <%= @flat.description %> </p>
         </div>
         <div class="col-sm-4">
           <div class="booking-box">
-            <h2>Price per night</h2>
-            <h2>Dates</h2>
-            <h2>Guests</h2>
-            <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+            <div class="price_night">
+              <p> Price per night: </p>
+              <h3> € <%= @flat.price_per_night %> </h3>
+            </div>
+
+            <div>
+              <form action="" id="booking-dates">
+                <p>When do you want to travel?</p>
+                <input type="date" name="start-date" class="form-control">
+                <input type="date" name="end-date" class="form-control"">
+              </form>
+            </div>
+
+            <div class="price_total">
+              <p> Total price: </p>
+              <h3> € <%= @flat.price_per_night %> </h3>
+            </div>
+
+            <div class="request-btn">
+              <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+            </div>
           </div>
         </div>
       </div>
