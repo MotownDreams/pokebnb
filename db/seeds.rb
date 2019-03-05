@@ -18,7 +18,9 @@ User.create(
 
 10.times do
   Flat.create(
-    location: Faker::Address.city,
+    # test
+    name: Faker::Movies::HarryPotter.location,
+    location: Faker::TvShows::RickAndMorty.location,
     user: User.last,
     price_per_night: rand(15..150),
     description: Faker::Restaurant.description
