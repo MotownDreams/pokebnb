@@ -4,7 +4,7 @@
 
 #map {
   flex: 0 0 450px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   position: sticky !important;
   top: 0 !important;
   // position: absolute;
