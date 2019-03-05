@@ -18,6 +18,7 @@ User.create(
 
 10.times do
   Flat.create(
+    # test
     name: Faker::Movies::HarryPotter.location,
     location: Faker::TvShows::RickAndMorty.location,
     user: User.last,
