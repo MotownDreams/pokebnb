@@ -15,6 +15,10 @@ class FlatsController < ApplicationController
     @flat = Flat.new
   end
 
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
   def create
     @flat = Flat.new
     if @flat.save
