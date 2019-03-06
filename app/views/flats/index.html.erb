@@ -7,7 +7,8 @@
           <div class="col-sm-6 col-lg-4">
             <div class="flats-card">
               <div class="card-details text-center">
-                <h3><%= flat.location %></h3>
+                <h3 class="card-name"><%= flat.name %></h3>
+                <h3 class="card-location"><%= flat.location %></h3>
               </div>
               <%= link_to "", flat_path(flat), class: "card-link" %>
             </div>
