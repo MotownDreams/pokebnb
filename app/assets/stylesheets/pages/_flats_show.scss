@@ -17,6 +17,29 @@
   background-position: center;
 }
 
+.add-photo {
+  background-size: cover;
+  background-color: lightgray;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  &:hover {
+    background-color: gray;
+  }
+  .add-photo-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  p {
+    color: white;
+    font-size: 48px;
+  }
+}
+
 #picture1 {
   grid-row: 1 / span 2;
   grid-column: 1 / span 2;
