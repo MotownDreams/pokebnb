@@ -6,21 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Photo.destroy_all
 Flat.destroy_all
 User.destroy_all
 
 User.create(
-  email: Faker::Internet.email,
+  email: "einarjonsson@mac.com",
   first_name: "Benedict",
   last_name: "Cumbersnatch",
-  password: "encrypted"
+  password: "password"
   )
 
-10.times do
+20.times do
   Flat.create(
     # test
     name: Faker::Movies::HarryPotter.location,
-    location: Faker::TvShows::RickAndMorty.location,
+    location: Faker::Address.city,
     user: User.last,
     price_per_night: rand(15..150),
     description: Faker::Restaurant.description

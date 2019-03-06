@@ -1,12 +1,10 @@
 class FlatsController < ApplicationController
   def index
     if params[:query]
-      @flats = Flat.where("lower(location) LIKE ?", "%#{params[:query].downcase}%")
+      @flats = Flat.where.not(latitude: nil, longitude: nil).where("lower(location) LIKE ?", "%#{params[:query].downcase}%")
     else
       @flats = Flat.all
     end
-
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
 
     @markers = @flats.map do |flat|
       {
