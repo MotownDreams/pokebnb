@@ -15,27 +15,33 @@
   padding: 0 30px;
 }
 
-.flats-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 20px 0;
-  color: white;
-  background-color: rgba(0,0,0,0.3);
-  height: 300px;
-  box-shadow: 0 0 6px #7F7F7F;
-  .card-link {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  .card-details h3 {
-    font-size: 30px;
-  }
+.row {
+  margin-top: 30px;
 }
+
+// .flats-card {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   position: relative;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   margin: 20px 0;
+//   color: white;
+//   background-color: rgba(0,0,0,0.3);
+//   height: 300px;
+//   box-shadow: 0 0 6px #7F7F7F;
+//   .card-link {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//   }
+//   .card-details h3 {
+//     font-size: 30px;
+//   }
+// }
+
+
