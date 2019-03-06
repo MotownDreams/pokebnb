@@ -2,52 +2,63 @@
   <div id="room">
 
     <div class="grid pictures-banner">
-
-        <div id="picture1" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+      <% if @flat.photos.first %>
+        <div id="picture1" class="apt-pic" style="background-image: url('<%= cl_image_path(@flat.photos.first.photo) %>')">
         </div>
-
-          <div id="picture2" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+      <% else %>
+        <div id="picture1" class="add-photo">
+          <p>+</p>
+          <%= link_to "", new_flat_photo_path(@flat), class: "add-photo-link" %>
+        </div>
+      <% end %>
+      <% counter = 1 %>
+      <% 4.times do %>
+        <% if @flat.photos[counter] %>
+          <div class="apt-pic" style="background-image: url('<%= cl_image_path(@flat.photos[counter].photo) %>')">
           </div>
-          <div id="picture3" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
+        <% else %>
+          <div class="add-photo">
+            <p>+</p>
+            <%= link_to "", new_flat_photo_path(@flat), class: "add-photo-link" %>
           </div>
-
-          <div id="picture4" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
-          </div>
-          <div id="picture5" class="apt-pic" style="background-image: url(<%= image_path("apt-beton.jpg") %>">
-          </div>
+        <% end %>
+        <% counter += 1 %>
+      <% end %>
 
       <button class="view-photos"> View Photos </button>
     </div>
 
     <div class="row">
-      <div class="container flat-description">
-        <div class="col-sm-8">
-          <h1> <%= @flat.name %> </h1>
-          <h2> <%= @flat.location %> </h2>
-          <p> <%= @flat.description %> </p>
-        </div>
-        <div class="col-sm-4">
-          <div class="booking-box">
-            <div class="price_night">
-              <p> Price per night: </p>
-              <h3> € <%= @flat.price_per_night %> </h3>
-            </div>
+      <div class="container">
+        <div class="flat-description">
+          <div class="col-sm-8">
+            <h1> <%= @flat.name %> </h1>
+            <h2> <%= @flat.location %> </h2>
+            <p> <%= @flat.description %> </p>
+          </div>
+          <div class="col-sm-4">
+            <div class="booking-box">
+              <div class="price_night">
+                <p> Price per night: </p>
+                <h3> € <%= @flat.price_per_night %> </h3>
+              </div>
 
-            <div>
-              <form action="" id="booking-dates">
-                <p>When do you want to travel?</p>
-                <input type="date" name="start-date" class="form-control">
-                <input type="date" name="end-date" class="form-control"">
-              </form>
-            </div>
+              <div>
+                <form action="" id="booking-dates">
+                  <p>When do you want to travel?</p>
+                  <input type="date" name="start-date" class="form-control">
+                  <input type="date" name="end-date" class="form-control"">
+                </form>
+              </div>
 
-            <div class="price_total">
-              <p> Total price: </p>
-              <h3> € <%= @flat.price_per_night %> </h3>
-            </div>
+              <div class="price_total">
+                <p> Total price: </p>
+                <h3> € <%= @flat.price_per_night %> </h3>
+              </div>
 
-            <div class="request-btn">
-              <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+              <div class="request-btn">
+                <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+              </div>
             </div>
           </div>
         </div>
