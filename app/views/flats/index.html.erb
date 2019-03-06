@@ -2,22 +2,33 @@
   <div class="index-flex">
     <div class="flats-list">
       <h1 class="main-title text-center">All Flats</h1>
+
       <div class="row">
-        <% @flats.each do |flat| %>
-          <div class="col-sm-6 col-lg-4">
-            <div class="flats-card">
-              <div class="card-details text-center">
-                <h3><%= flat.location %></h3>
+          <% @flats.each do |flat| %>
+            <div class="col-md-6 col-lg-4">
+              <div class="card flats-card">
+                <div class="cardimg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("apt-beton.jpg") %>');">
+                </div>
+                <div class="cardcontent text-center">
+                  <p><%= flat.location %></p>
+                  <h3><%= flat.name %></h3>
+                </div>
+                <div class="cardfooter">
+                  <h3> €<%= flat.price_per_night %></h3>
+                  <a href="#"><i class="far fa-heart"></i></a>
+                </div>
               </div>
-              <%= link_to "", flat_path(flat), class: "card-link" %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
       </div>
     </div>
     <div id="map"></div>
   </div>
 </div>
+
+
+
+
 
 <script>
   function initMap() {
@@ -33,3 +44,6 @@
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
 </script>
+
+
+
