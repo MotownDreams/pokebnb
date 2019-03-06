@@ -48,6 +48,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "New Flat", new_flat_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -58,6 +59,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href=<%= new_user_session_path %>>Login</a></li>
         <li><a href=<%= root_path %>>Search</a></li>
+        <li><a href=<%= new_flat_path %>>New Flat</a></li>
       </ul>
     </div>
   </div>
