@@ -46,6 +46,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -55,6 +56,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href=<%= new_user_session_path %>>Login</a></li>
+        <li><a href=<%= new_user_session_path %>>Sign Up</a></li>
         <li><a href=<%= root_path %>>Search</a></li>
         <li><a href=<%= new_flat_path %>>New Flat</a></li>
       </ul>
