@@ -7,8 +7,9 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
+    @photo.flat = @flat
     if @photo.save
-      redirect_to flat_path(find_flat)
+      redirect_to flat_path(@flat)
     else
       render :new
     end

@@ -7,6 +7,10 @@
       <%= f.input :location %>
       <%= f.input :price_per_night %>
       <%= f.input :description %>
+        <%= f.simple_fields_for :photos do |p| %>
+          <%= p.input :photo %>
+          <%= p.input :photo_cache, as: :hidden %>
+        <% end %>
       <%= f.button :submit %>
       <% end %>
     <div>
