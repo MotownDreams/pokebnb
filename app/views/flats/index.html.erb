@@ -7,8 +7,15 @@
           <% @flats.each do |flat| %>
             <div class="col-md-6 col-lg-4">
               <div class="card flats-card">
-                <div class="cardimg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("apt-beton.jpg") %>');">
+                <% if flat.photos.first %>
+                  <div class="cardimg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(flat.photos.first.photo) %>');">
                 </div>
+                <% else %>
+                  <div class="cardimg">
+                  </div>
+                <% end %>
+             <!--    <div class="cardimg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("apt-beton.jpg") %>');">
+                </div> -->
                 <div class="cardcontent text-center">
                   <p><%= flat.location %></p>
                   <h3><%= flat.name %></h3>
