@@ -29,34 +29,36 @@
     </div>
 
     <div class="row">
-      <div class="container flat-description">
-        <div class="col-sm-8">
-          <h1> <%= @flat.name %> </h1>
-          <h2> <%= @flat.location %> </h2>
-          <p> <%= @flat.description %> </p>
-        </div>
-        <div class="col-sm-4">
-          <div class="booking-box">
-            <div class="price_night">
-              <p> Price per night: </p>
-              <h3> € <%= @flat.price_per_night %> </h3>
-            </div>
+      <div class="container">
+        <div class="flat-description">
+          <div class="col-sm-8">
+            <h1> <%= @flat.name %> </h1>
+            <h2> <%= @flat.location %> </h2>
+            <p> <%= @flat.description %> </p>
+          </div>
+          <div class="col-sm-4">
+            <div class="booking-box">
+              <div class="price_night">
+                <p> Price per night: </p>
+                <h3> € <%= @flat.price_per_night %> </h3>
+              </div>
 
-            <div>
-              <form action="" id="booking-dates">
-                <p>When do you want to travel?</p>
-                <input type="date" name="start-date" class="form-control">
-                <input type="date" name="end-date" class="form-control"">
-              </form>
-            </div>
+              <div>
+                <form action="" id="booking-dates">
+                  <p>When do you want to travel?</p>
+                  <input type="date" name="start-date" class="form-control">
+                  <input type="date" name="end-date" class="form-control"">
+                </form>
+              </div>
 
-            <div class="price_total">
-              <p> Total price: </p>
-              <h3> € <%= @flat.price_per_night %> </h3>
-            </div>
+              <div class="price_total">
+                <p> Total price: </p>
+                <h3> € <%= @flat.price_per_night %> </h3>
+              </div>
 
-            <div class="request-btn">
-              <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+              <div class="request-btn">
+                <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
+              </div>
             </div>
           </div>
         </div>
