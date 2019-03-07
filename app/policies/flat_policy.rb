@@ -15,12 +15,4 @@ class FlatPolicy < ApplicationPolicy
   def show?
     true
   end
-
-  def new?
-    create?
-  end
-
-  def edit?
-    update?
-  end
 end
