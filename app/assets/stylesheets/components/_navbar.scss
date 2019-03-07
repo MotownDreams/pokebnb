@@ -26,6 +26,12 @@
 }
 
 /* Right section */
+.navbar-wagon-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .navbar-wagon-right {
   display: flex;
   align-items: center;
@@ -93,8 +99,11 @@
 }
 
 /* Style the search box inside the navigation bar */
+.search {
+  margin-left: 20px;
+}
+
 .navbar-lewagon input[type=text] {
-  float: center;
   padding: 6px;
   border: none;
   margin-top: 8px;
