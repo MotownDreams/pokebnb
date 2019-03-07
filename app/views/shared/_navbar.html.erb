@@ -8,8 +8,10 @@
     <!-- Search field here -->
     <div class="search hidden-xs">
       <form action=<%= flats_path %> class="form-inline">
-        <input type="text" name="query" placeholder="Search city..." class="form-control">
-        <input type="submit" id="submit" value="Search" class="btn btn-danger">
+        <div class="flex">
+          <input type="text" name="query" id="search-location-nav" placeholder="Search city..." class="form-control">
+          <input type="submit" id="submit" value="Search" class="btn btn-danger search-submit">
+        </div>
       </form>
     </div>
   </div>
