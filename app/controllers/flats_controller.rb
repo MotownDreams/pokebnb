@@ -53,8 +53,9 @@ class FlatsController < ApplicationController
   end
 
   def destroy
+    authorize @flat
     @flat.destroy
-    redirect_to flat_path(@flat)
+    redirect_to flats_path
   end
 
   private
