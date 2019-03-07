@@ -24,8 +24,6 @@
         <% end %>
         <% counter += 1 %>
       <% end %>
-
-      <button class="view-photos"> View Photos </button>
     </div>
 
     <div class="row">
@@ -44,21 +42,20 @@
               </div>
 
               <div>
-                <form action="" id="booking-dates">
-                  <p>When do you want to travel?</p>
-                  <input type="date" name="start-date" class="form-control">
-                  <input type="date" name="end-date" class="form-control"">
-                </form>
+                <p>When do you want to travel?</p>
+                <%= simple_form_for(@booking) do |f| %>
+                  <%= f.input :start_date, class: "date" %>
+                  <%= f.input :end_date, class: "date" %>
+                  <%= f.input :flat_id, as: :hidden, input_html: { value: @flat.id } %>
+                  <%= f.input :total_price, as: :hidden, input_html: { value: @flat.price_per_night }%>
+                  <div class="price_total">
+                    <p> Total price: </p>
+                    <h3> € <%= @flat.price_per_night %> </h3>
+                  </div>
+                  <%= f.submit "Request Booking", class: "btn btn-danger" %>
+                <% end %>
               </div>
 
-              <div class="price_total">
-                <p> Total price: </p>
-                <h3> € <%= @flat.price_per_night %> </h3>
-              </div>
-
-              <div class="request-btn">
-                <%= link_to "Request to book", flats_path, class: "btn btn-danger" %>
-              </div>
             </div>
           </div>
         </div>
