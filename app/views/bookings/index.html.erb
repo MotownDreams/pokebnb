@@ -2,7 +2,6 @@
   <div class="index-flex">
     <div class="flats-list">
       <h1 class="main-title text-center">All Bookings</h1>
-
       <div class="row">
           <% @bookings.each do |booking| %>
             <div class="col-md-6 col-lg-4">
@@ -24,6 +23,7 @@
                 </div>
                 <%= link_to "", flat_path(booking.flat), class: "card-link" %>
                 <p class="booking-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
+                <p class="state"><%= booking.state %></p>
               </div>
             </div>
           <% end %>
