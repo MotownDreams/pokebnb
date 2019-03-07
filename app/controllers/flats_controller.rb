@@ -44,8 +44,7 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     authorize @flat
-    # change this when we add sessions
-    @flat.user = User.last
+    @flat.user = current_user
     if @flat.save
       redirect_to flat_path(@flat)
     else
