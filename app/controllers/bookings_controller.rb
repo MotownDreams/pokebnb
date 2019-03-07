@@ -5,14 +5,11 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-  def show
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       @flat = @booking.flat
       render "flats/show"
