@@ -5,7 +5,7 @@ class FlatPolicy < ApplicationPolicy
     end
   end
   def create?
-    true
+    user.present?
   end
 
   def update?
@@ -17,7 +17,7 @@ class FlatPolicy < ApplicationPolicy
   end
 
   def new?
-    user.present?
+    create?
   end
 
   def edit?
