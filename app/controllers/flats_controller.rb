@@ -1,4 +1,5 @@
 class FlatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params[:query]
       @flats = Flat.where.not(latitude: nil, longitude: nil).where("lower(location) LIKE ?", "%#{params[:query].downcase}%")
