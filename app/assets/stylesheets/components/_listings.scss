@@ -31,8 +31,10 @@
 .listing-message {
   flex: 1 1 auto;
   margin-left: 20px;
-  p {
-    margin-top: 0;
+  h2 {
+    font-weight: bold;
+  }
+  h3 {
     opacity: 0.5;
   }
 }
@@ -40,9 +42,9 @@
 .listing-sender {
   flex: 0 0 120px;
   margin-left: 10px;
-  h3 {
+  h2 {
     opacity: 0.5;
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -51,6 +53,20 @@
   margin-left: 20px;
   h2 {
     font-size: 14px;
+  }
+  .listing-price {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.listing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  form {
+    margin: 5px;
   }
 }
 
