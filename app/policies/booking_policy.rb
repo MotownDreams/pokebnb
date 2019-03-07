@@ -5,11 +5,6 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    # record.first.user == user
-    true
-  end
-
   def create?
     user.present?
   end
