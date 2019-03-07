@@ -2,12 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-        <h1 class="main-title text-center">Create a new Photo</h1>
-        <%= simple_form_for [@flat, @photo] do |f| %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.submit class: "btn-blue" %>
-        <% end %>
+        <h1 class="main-title text-center">Add a new Photo</h1>
+          <%= render 'form', photo: @photo %>
       </div>
     </div>
   </div>
