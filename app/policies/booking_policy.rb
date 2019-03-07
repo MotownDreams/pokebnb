@@ -1,19 +1,17 @@
-class FlatPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
+
+  def index?
+    # record.first.user == user
+    true
+  end
+
   def create?
     user.present?
-  end
-
-  def update?
-    owner?
-  end
-
-  def show?
-    true
   end
 
   def destroy?

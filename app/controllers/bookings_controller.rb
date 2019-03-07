@@ -3,11 +3,14 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user: current_user)
+    @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to bookings_path
     else
@@ -17,6 +20,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to bookings_path
   end
