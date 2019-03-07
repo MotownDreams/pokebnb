@@ -2,7 +2,7 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params[:query]
-      @flats = Flat.where.not(latitude: nil, longitude: nil).global_search(params[:query])
+      @flats = Flat.global_search(params[:query]) # .where.not(latitude: nil, longitude: nil)
     else
       @flats = Flat.all
     end
