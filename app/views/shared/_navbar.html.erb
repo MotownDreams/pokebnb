@@ -1,19 +1,22 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo-turtle.png", height: 50 %>
-  <% end %>
+  <div class="navbar-wagon-left">
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo-turtle.png", height: 50 %>
+    <% end %>
 
-  <!-- Search field here -->
-  <div class="search hidden-xs">
-    <form action=<%= flats_path %> class="form-inline">
-      <input type="text" name="query" placeholder="Search city..." class="form-control">
-      <input type="submit" id="submit" value="Search" class="btn btn-danger">
-    </form>
+    <!-- Search field here -->
+    <div class="search hidden-xs">
+      <form action=<%= flats_path %> class="form-inline">
+        <input type="text" name="query" placeholder="Search city..." class="form-control">
+        <input type="submit" id="submit" value="Search" class="btn btn-danger">
+      </form>
+    </div>
   </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <%= link_to "All Flats", flats_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
 
@@ -55,10 +58,15 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href=<%= new_user_session_path %>>Login</a></li>
-        <li><a href=<%= new_user_session_path %>>Sign Up</a></li>
-        <li><a href=<%= root_path %>>Search</a></li>
-        <li><a href=<%= new_flat_path %>>New Flat</a></li>
+        <% if user_signed_in? %>
+          <li><a href=<%= new_flat_path %>>New Flat</a></li>
+          <li><a href=<%= flats_path %>>All Flats</a></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><a href=<%= new_user_session_path %>>Sign Up</a></li>
+          <li><a href=<%= new_user_session_path %>>Login</a></li>
+          <li><a href=<%= flats_path %>>All Flats</a></li>
+        <% end %>
       </ul>
     </div>
   </div>
