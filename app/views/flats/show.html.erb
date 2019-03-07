@@ -1,9 +1,21 @@
 <div>
   <div id="room">
 
+    <!-- picture banner starts here -->
+
     <div class="grid pictures-banner">
       <% if @flat.photos.first %>
         <div id="picture1" class="apt-pic" style="background-image: url('<%= cl_image_path(@flat.photos.first.photo) %>')">
+          <div class="edit-pen">
+            <%= link_to edit_flat_photo_path(@flat, @flat.photos.first) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+          </div>
+          <div class="trash">
+            <%= link_to flat_photo_path(@flat, @flat.photos.first), method: :delete, data: { confirm: 'Are you certain you want to delete this?'} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
         </div>
       <% else %>
         <div id="picture1" class="add-photo">
@@ -15,6 +27,16 @@
       <% 4.times do %>
         <% if @flat.photos[counter] %>
           <div class="apt-pic" style="background-image: url('<%= cl_image_path(@flat.photos[counter].photo) %>')">
+            <div class="edit-pen">
+            <%= link_to edit_flat_photo_path(@flat, @flat.photos[counter]) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+            </div>
+            <div class="trash">
+            <%= link_to flat_photo_path(@flat, @flat.photos[counter]), method: :delete, data: { confirm: 'Are you certain you want to delete this?'} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
           </div>
         <% else %>
           <div class="add-photo">
@@ -24,9 +46,10 @@
         <% end %>
         <% counter += 1 %>
       <% end %>
-
       <button class="view-photos"> View Photos </button>
     </div>
+
+    <!-- description starts here -->
 
     <div class="row">
       <div class="container">
