@@ -19,6 +19,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @flat
   end
 
