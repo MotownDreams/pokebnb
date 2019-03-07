@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_flat, only:  [:show, :edit, :update]
+  before_action :find_flat, only:  [:show, :edit, :update, :destroy]
 
   def index
     @flats = policy_scope(Flat).order(created_at: :desc)
@@ -51,6 +51,11 @@ class FlatsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to flat_path(@flat)
   end
 
   private
