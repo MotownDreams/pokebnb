@@ -56,6 +56,16 @@
         <div class="flat-description">
           <div class="col-sm-8">
             <h1> <%= @flat.name %> </h1>
+            <div class="edit-pen">
+            <%= link_to edit_flat_path(@flat) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+          </div>
+          <div class="trash">
+            <%= link_to flat_path(@flat), method: :delete, data: { confirm: 'Are you certain you want to delete this?'} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
             <h2> <%= @flat.location %> </h2>
             <p> <%= @flat.description %> </p>
           </div>
