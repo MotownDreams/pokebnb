@@ -1,11 +1,11 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_flat, only:  [:show, :edit, :update]
+  before_action :find_flat, only:  [:show, :edit, :update, :destroy]
 
   def index
     @flats = policy_scope(Flat).order(created_at: :desc)
     if params[:query]
-      @flats = Flat.where.not(latitude: nil, longitude: nil).global_search(params[:query])
+      @flats = Flat.global_search(params[:query]) # .where.not(latitude: nil, longitude: nil)
     else
       @flats = Flat.all
     end
@@ -19,6 +19,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @flat
   end
 
@@ -43,13 +44,17 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     authorize @flat
-    # change this when we add sessions
-    @flat.user = User.last
+    @flat.user = current_user
     if @flat.save
       redirect_to flat_path(@flat)
     else
       render :new
     end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to flat_path(@flat)
   end
 
   private

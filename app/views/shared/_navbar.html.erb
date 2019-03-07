@@ -39,8 +39,13 @@
               <% end %>
             </li>
             <li>
+              <%= link_to bookings_path do %>
+                <i class="fas fa-book"></i></i>  Bookings
+              <% end %>
+            </li>
+            <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
@@ -61,6 +66,7 @@
         <% if user_signed_in? %>
           <li><a href=<%= new_flat_path %>>New Flat</a></li>
           <li><a href=<%= flats_path %>>All Flats</a></li>
+          <li><%= link_to "Bookings", bookings_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><a href=<%= new_user_session_path %>>Sign Up</a></li>

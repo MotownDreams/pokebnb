@@ -11,21 +11,16 @@
   grid-template-rows: 50% 50%;
 }
 
-.apt-pic {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
 .add-photo {
   background-size: cover;
-  background-color: lightgray;
+  background-color: #f9f8ed;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
   &:hover {
-    background-color: gray;
+    background-color: #c3a655;
   }
   .add-photo-link {
     position: absolute;
@@ -43,12 +38,47 @@
 #picture1 {
   grid-row: 1 / span 2;
   grid-column: 1 / span 2;
+  position: relative;
+  // :hover {
+  //   transform: scale(1.5);
+  //   opacity: 50%;
+  //   background-color: #fb929e;
+  // }
+}
+
+.apt-pic {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  // :hover {
+  //   transform: scale(1.5);
+  //   opacity: 50%;
+  //   background-color: #fb929e;
+  // }
+  .fa, .fas, .far, .fal, .fab {
+    color: white;
+    text-shadow: 2px 2px 5px gray;
+  }
 }
 
 .view-photos {
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.edit-pen {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+
+
+.trash {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 // Description:
@@ -62,10 +92,12 @@
 }
 
 .booking-box {
-  border: 1px solid #c2cfd8;
-  padding: 5px;
+  padding: 20px;
   text-align: center;
   margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2)
 }
 
 .price_night {
@@ -76,6 +108,7 @@
 .price_total {
   border-bottom: 1px solid #04536c;
   margin: 0px 50px;
+  margin-bottom: 20px;
 }
 
 #booking-dates {
@@ -83,6 +116,11 @@
   padding-bottom: 10px;
 }
 
-.request-btn {
-  margin: 20px;
+.date.required.form-control{
+  display: inline-block;
+  width: 32%;
+}
+
+.booking-dates {
+  padding-top: 10px;
 }
