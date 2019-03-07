@@ -1,6 +1,9 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_flat, only:  [:show, :edit, :update]
+
   def index
+    @flats = policy_scope(Flat).order(created_at: :desc)
     if params[:query]
       @flats = Flat.where.not(latitude: nil, longitude: nil).where("lower(location) LIKE ?", "%#{params[:query].downcase}%")
     else
@@ -13,23 +16,33 @@ class FlatsController < ApplicationController
         lat: flat.latitude
       }
     end
-
   end
 
   def show
-    @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def edit
-    @flat = Flat.find(params[:id])
+    authorize @flat
+  end
+
+  def update
+    authorize @flat
+    if @flat.update(flat_params)
+      redirect_to @flat
+    else
+      render :edit
+    end
   end
 
   def create
     @flat = Flat.new(flat_params)
+    authorize @flat
     # change this when we add sessions
     @flat.user = User.last
     if @flat.save
@@ -43,5 +56,9 @@ class FlatsController < ApplicationController
 
   def flat_params
     params.require(:flat).permit(:name, :location, :price_per_night, :description)
+  end
+
+  def find_flat
+    @flat = Flat.find(params[:id])
   end
 end
