@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-position: center;
   margin: 20px 0;
+  color: white;
   background-color: rgba(0,0,0,0.3);
   height: 300px;
   border-radius: 5px;
@@ -20,7 +21,7 @@
     bottom: 0px;
     left: 0px;
     padding: 15px;
-    color: white;
+    // color: white;
     .card-name {
       margin-top: 0px;
       font-size: 1em;
@@ -30,12 +31,21 @@
       font-size: 0.8em;
     }
   }
-
-  .card-footer {
-    color: white;
+  .card-price {
+    // color: white;
     position: absolute;
     top: -10px;
     right: 10px;
     font-size: 0.8em;
+  }
+  .absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 }
