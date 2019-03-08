@@ -4,7 +4,11 @@
       <h1 class="main-title text-center">Profile</h1>
       <div class="row">
        <div class="col-xs-5 col-sm-offset-1">
-        <h2>Name: <%= @user.first_name %> <%= @user.last_name %></h2>
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :first_name%>
+          <%= f.input :last_name%>
+          <%= f.submit "Update Name" %>
+        <% end %>
         <h3>Email: <%= @user.email %></h3>
        </div>
        <div class="col-xs-5 col-sm-offset-1">
@@ -12,7 +16,7 @@
         <%= simple_form_for(@user) do |f| %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.submit %>
+          <%= f.submit "Update Profile Pic" %>
         <% end %>
         </div>
       </div>
