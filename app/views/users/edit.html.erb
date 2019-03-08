@@ -8,11 +8,11 @@
         <h3>Email: <%= @user.email %></h3>
        </div>
        <div class="col-xs-5 col-sm-offset-1">
+        <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
         <%= simple_form_for(@user) do |f| %>
-          <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.button :submit %>
+          <%= f.submit %>
         <% end %>
         </div>
       </div>
