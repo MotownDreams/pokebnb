@@ -13,7 +13,8 @@ class FlatsController < ApplicationController
     @markers = @flats.map do |flat|
       {
         lng: flat.longitude,
-        lat: flat.latitude
+        lat: flat.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
       }
     end
   end
@@ -56,6 +57,10 @@ class FlatsController < ApplicationController
     authorize @flat
     @flat.destroy
     redirect_to flats_path
+  end
+
+  def listings_index
+    @flats = policy_scope(Flat).order(created_at: :desc).where(user: current_user)
   end
 
   private

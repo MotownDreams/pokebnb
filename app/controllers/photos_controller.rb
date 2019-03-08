@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
 
   def update
     authorize @photo
-    if @photo.update(params_photo)
+    if @photo.update(photo_params)
       redirect_to flat_path(@flat)
     else
       render :edit
