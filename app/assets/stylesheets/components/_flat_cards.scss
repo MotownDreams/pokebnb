@@ -83,3 +83,23 @@
 .mapboxgl-popup-content {
   padding: 0 !important;
 }
+
+.booking-action {
+  &.edit-pen {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  }
+  &.trash {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  }
+  .fa, .fas, .far, .fal, .fab {
+    color: white;
+    text-shadow: 1px 1px 5px gray;
+    &:hover {
+      text-shadow: 1px 1px 5px rgba(238,95,91,0.9);
+    }
+  }
+}

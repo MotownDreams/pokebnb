@@ -22,9 +22,24 @@
                     <%= booking.state.capitalize %>
                   </p>
                 </div>
+
+
+                  <div class=" booking-action edit-pen">
+                    <%= link_to flats_path(@flat) do %>
+                      <i class="far fa-edit"></i>
+                    <% end %>
+                  </div>
+                  <div class="booking-action trash">
+                    <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you certain you want to delete this?'} do %>
+                      <i class="far fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+
+
               </div>
             </div>
           <% end %>
       </div>
     </div>
+</div>
 </div>
