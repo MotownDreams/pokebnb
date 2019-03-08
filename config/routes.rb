@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :flats do
     resources :photos, only: [:new, :create, :update, :edit, :destroy]
   end
-  resources :users, only: [:show, :new, :create]
+
+  resources :users, only: [:show, :new, :create, :edit, :update]
   resources :bookings, only: [:index, :create, :update]
   get '/listings', to: 'flats#listings_index', as: :listings
 end
