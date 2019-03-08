@@ -14,7 +14,7 @@
                   <h3> €<%= booking.total_price %></h3>
                 </div>
                 <div class="absolute">
-                  <p class="booking-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
+                  <p class="booking-dates"><%= booking.start_date.strftime("%b %d %Y") %> - <%= booking.end_date.strftime("%b %d %Y") %></p>
                 </div>
                 <%= link_to "", flat_path(booking.flat), class: "card-link" %>
                 <div class="booking-state-div">
