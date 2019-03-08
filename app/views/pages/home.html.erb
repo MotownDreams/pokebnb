@@ -3,8 +3,10 @@
     <h1 class="text-center">Plan your next adventure</h1>
     <div class="search-form">
       <form action=<%= flats_path %> class="form-inline">
-        <input type="text" name="query" class="form-control" placeholder="Your destination">
-        <input type="submit" class="btn btn-danger" value="Search">
+        <div class="flex">
+          <input type="text" name="query" id="search-location-home" placeholder="Your destination">
+          <input type="submit" class="btn btn-danger search-submit" value="Search">
+        </div>
       </form>
     </div>
   </div>
