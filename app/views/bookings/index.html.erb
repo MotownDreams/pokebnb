@@ -5,7 +5,7 @@
       <div class="row">
           <% @bookings.each do |booking| %>
             <div class="col-sm-6 col-md-4">
-              <div class="flats-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= booking.flat.photos.first ? booking.flat.photos.first.photo : image_path('apt-beton.jpg') %>');">
+              <div class="flats-card booking-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= booking.flat.photos.first ? booking.flat.photos.first.photo : image_path('apt-beton.jpg') %>');">
                 <div class="card-content">
                   <p class="card-location"><%= booking.flat.location %></p>
                   <h3 class="card-name"><%= booking.flat.name %></h3>
@@ -17,10 +17,11 @@
                   <p class="booking-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
                 </div>
                 <%= link_to "", flat_path(booking.flat), class: "card-link" %>
-                <p class="booking-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
-                <p class=<%= booking.state %>>
-                  <%= booking.state.capitalize %>
-                </p>
+                <div class="booking-state-div">
+                  <p class=<%= booking.state %>>
+                    <%= booking.state.capitalize %>
+                  </p>
+                </div>
               </div>
             </div>
           <% end %>
