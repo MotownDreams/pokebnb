@@ -4,13 +4,11 @@ class FlatsController < ApplicationController
 
   def index
     @flats = policy_scope(Flat).order(created_at: :desc)
-    if params[:query] != ""
-      @flats = Flat.global_search(params[:query]) # .where.not(latitude: nil, longitude: nil)
-    else
-      @flats = Flat.all
+    if params[:query] && params[:query] != ""
+      @flats.global_search(params[:query]) # .where.not(latitude: nil, longitude: nil)
     end
 
-    if params["min-capacity"] != ""
+    if params["min-capacity"] && params["min-capacity"] != ""
       @flats = @flats.where("capacity >= ?", params['min-capacity'])
     end
 
