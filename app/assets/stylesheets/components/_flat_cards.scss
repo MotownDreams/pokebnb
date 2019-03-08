@@ -50,6 +50,28 @@
   }
 }
 
+.booking-state-div {
+  p {
+    padding: 10px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+  }
+  .pending {
+    background-color: gray;
+  }
+  .accepted {
+    background-color: green;
+  }
+  .rejected {
+    background-color: red;
+  }
+}
+.booking-card {
+  .card-price {
+    top: -22px;
+  }
+}
+
 .mapboxgl-popup {
   .flats-card {
     width: 200px;
