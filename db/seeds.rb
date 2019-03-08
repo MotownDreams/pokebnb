@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Photo.destroy_all
+Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
 
@@ -23,6 +23,7 @@ User.create(
     name: Faker::Movies::HarryPotter.location,
     location: Faker::Address.city,
     user: User.last,
+    capacity: rand(1..5),
     price_per_night: rand(15..150),
     description: Faker::Restaurant.description
     )
