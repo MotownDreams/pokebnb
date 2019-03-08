@@ -49,3 +49,15 @@
     justify-content: space-around;
   }
 }
+
+.mapboxgl-popup {
+  .flats-card {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+  }
+}
+
+.mapboxgl-popup-content {
+  padding: 0 !important;
+}
