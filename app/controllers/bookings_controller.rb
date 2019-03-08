@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :destroy]
+  before_action :find_booking, only: [:show, :update, :destroy]
 
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
@@ -17,6 +17,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    authorize @booking
+    @booking.update(booking_params)
+    redirect_to listings_path
+  end
+
   def destroy
     authorize @booking
     @booking.destroy
@@ -30,6 +36,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:flat_id, :start_date, :end_date, :total_price)
+    params.require(:booking).permit(:flat_id, :start_date, :end_date, :total_price, :state)
   end
 end
