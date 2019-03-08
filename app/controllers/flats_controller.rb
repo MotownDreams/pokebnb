@@ -59,6 +59,10 @@ class FlatsController < ApplicationController
     redirect_to flats_path
   end
 
+  def listings_index
+    @flats = policy_scope(Flat).order(created_at: :desc).where(user: current_user)
+  end
+
   private
 
   def flat_params

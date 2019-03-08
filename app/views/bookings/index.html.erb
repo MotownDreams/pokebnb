@@ -2,28 +2,25 @@
   <div class="index-flex">
     <div class="flats-list">
       <h1 class="main-title text-center">All Bookings</h1>
-
       <div class="row">
           <% @bookings.each do |booking| %>
-            <div class="col-md-6 col-lg-4">
-              <div class="card flats-card">
-                <% if booking.flat.photos.first %>
-                  <div class="cardimg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(booking.flat.photos.first.photo) %>');">
+            <div class="col-sm-6 col-md-4">
+              <div class="flats-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= booking.flat.photos.first ? booking.flat.photos.first.photo : image_path('apt-beton.jpg') %>');">
+                <div class="card-content">
+                  <p class="card-location"><%= booking.flat.location %></p>
+                  <h3 class="card-name"><%= booking.flat.name %></h3>
                 </div>
-                <% else %>
-                  <div class="cardimg">
-                  </div>
-                <% end %>
-                <div class="cardcontent text-center">
-                  <p><%= booking.flat.location %></p>
-                  <h3><%= booking.flat.name %></h3>
-                </div>
-                <div class="cardfooter">
+                <div class="card-price">
                   <h3> €<%= booking.total_price %></h3>
-                  <a href="#"><i class="far fa-heart"></i></a>
+                </div>
+                <div class="absolute">
+                  <p class="booking-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
                 </div>
                 <%= link_to "", flat_path(booking.flat), class: "card-link" %>
                 <p class="booking-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
+                <p class=<%= booking.state %>>
+                  <%= booking.state.capitalize %>
+                </p>
               </div>
             </div>
           <% end %>

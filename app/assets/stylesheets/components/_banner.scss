@@ -6,10 +6,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: white;
+  h1 {
+    color: white;
+  }
 }
 
-
-
-
-
+.banner-content {
+  padding: 0 50px;
+  .search-form {
+    padding: 0 20px;
+  }
+}

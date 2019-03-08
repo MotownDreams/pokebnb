@@ -1,0 +1,53 @@
+<div class="page-content">
+  <div class="container">
+    <div class="index-flex">
+      <div class="flats-list">
+        <h1 class="main-title text-center">All Listings</h1>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+              <ul class="bookings-list">
+                <% @flats.each do |flat| %>
+                  <% flat.bookings.each do |booking| %>
+                      <li class="booking">
+                        <!-- <img src="images/gab.png" alt="gab" class="listing-avatar"> -->
+                        <%= image_tag "apt-beton.jpg", class: "listing-avatar" %>
+                        <div class="listing-sender">
+                          <h2><%= booking.user.full_name %></h2>
+                        </div>
+                        <div class="listing-message">
+                          <h2><%= booking.flat.name %></h2>
+                          <h3><%= booking.start_date %> - <%= booking.end_date %></h3>
+                          <!-- <p><%= booking.total_price %>€</p> -->
+                        </div>
+                        <% if booking.state == "pending" %>
+                          <div class="listing-actions">
+                            <%= simple_form_for(booking) do |f| %>
+                              <%= f.input :state, as: :hidden, input_html: {value: 'accepted'} %>
+                              <%= f.submit "Accept", class: "btn btn-success" %>
+                            <% end %>
+                            <%= simple_form_for(booking) do |f| %>
+                              <%= f.input :state, as: :hidden, input_html: {value: 'rejected'} %>
+                              <%= f.submit "Reject", class: "btn btn-danger" %>
+                            <% end %>
+                          </div>
+                        <% end %>
+                        <div class="listing-status">
+                          <h2 class=<%= booking.state %>>
+                            <%= booking.state.capitalize %>
+                          </h2>
+                          <h3 class="listing-price"><%= booking.total_price %>€</h3>
+                        </div>
+                      </li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+  </div>
+</div>
