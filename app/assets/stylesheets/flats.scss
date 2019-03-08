@@ -27,3 +27,15 @@
 .search-submit {
   margin-left: 5px;
 }
+
+.show-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .show-title-functions {
+    display: flex;
+    .edit-pen {
+      margin: 0 15px;
+    }
+  }
+}
