@@ -5,6 +5,17 @@
 $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 100px;
+    min-height: 100%;
+}
+
 h2 {
   align: center;
 }
