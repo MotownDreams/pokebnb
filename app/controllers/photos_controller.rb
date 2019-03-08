@@ -1,13 +1,16 @@
 class PhotosController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_flat, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_photo, only: [:edit, :update, :destroy]
 
   def new
     @photo = Photo.new
+    authorize @photo
   end
 
   def create
     @photo = Photo.new(photo_params)
+    authorize @photo
     @photo.flat = @flat
     if @photo.save
       redirect_to flat_path(@flat)
@@ -17,10 +20,12 @@ class PhotosController < ApplicationController
   end
 
   def edit
+    authorize @photo
   end
 
   def update
-    if @photo.update(params_photo)
+    authorize @photo
+    if @photo.update(photo_params)
       redirect_to flat_path(@flat)
     else
       render :edit
@@ -28,6 +33,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    authorize @photo
     @photo.destroy
     redirect_to flat_path(@flat)
   end
