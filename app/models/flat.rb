@@ -1,7 +1,7 @@
 class Flat < ApplicationRecord
   belongs_to :user
   has_many :photos, dependent: :destroy
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   validates :location, presence: true
   validates :price_per_night, presence: true, numericality: { only_integer: true }

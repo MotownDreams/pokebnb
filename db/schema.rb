@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_163344) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
+    t.integer "capacity"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
