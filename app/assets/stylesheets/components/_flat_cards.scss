@@ -1,175 +1,51 @@
 .flats-card {
-  margin-bottom: 20px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   position: relative;
-  height: 300px;
-  flex-direction: column;
-  font-family: sans-serif;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
-  // background-size: cover !important;
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // margin: 20px 0;
-  // background-color: rgba(0,0,0,0.3);
-  // height: 300px;
-  // box-shadow: 0 0 6px #7F7F7F;
-  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  // .card-link {
-  //   position: absolute;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  // }
-  // .card-details h3 {
-  //   font-size: 30px;
-  // }
-}
-
-.cardimg {
-  width: 100%;
-  height: 250px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
   background-size: cover !important;
   background-repeat: no-repeat;
   background-position: center;
-  // margin: 20px 0;
-}
-
-.cardcontent {
-  width: 100%;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 15px;
-  h3 {
-    margin-top: 0px;
-    color: black;
-    font-size: 1em;
+  margin: 20px 0;
+  color: white;
+  background-color: rgba(0,0,0,0.3);
+  height: 300px;
+  border-radius: 5px;
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
-  p {
+  .card-content {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 15px;
+    // color: white;
+    .card-name {
+      margin-top: 0px;
+      font-size: 1em;
+      font-weight: bold;
+    }
+    .card-location {
+      font-size: 0.8em;
+    }
+  }
+  .card-price {
+    // color: white;
+    position: absolute;
+    top: -10px;
+    right: 10px;
     font-size: 0.8em;
   }
-}
-
-.cardfooter {
-  height: 12%;
-  // background: rgb(235, 235, 235);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  h3 {
-  vertical-align: middle;
-  // margin-top: 0px;
-  font-size: 0.8em;
-  }
-  a {
-  vertical-align: middle;
-    margin-top: 15px;
-    font-size: 0.8em;
+  .absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 }
-
-// .cardreadme {
-//   color: rgb(150, 150, 150);
-// }
-// .cardcontent p:nth-child(1) {
-//   font-size: 0.8em;
-// }
-
-// .cardcontent p:nth-child(2) {
-//   font-size: 0.9em;
-// }
-
-// .cardbutton {
-//   background: #8ecccc;
-//   position: absolute;
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   transform: translate(150px, 128px);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   transition: 0.1s ease-in;
-// }
-
-// .cardbutton i {
-//   color: green;
-//   transform: translateY(-2px);
-// }
-
-// .cardbutton:hover {
-//   background: #50717b;
-// }
-
-
-// ----What EINAR did----
-// .flats-card {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
-//   position: relative;
-//   // background-size: cover !important;
-//   // background-repeat: no-repeat;
-//   // background-position: center;
-//   // margin: 20px 0;
-//   // background-color: rgba(0,0,0,0.3);
-//   // height: 300px;
-//   // box-shadow: 0 0 6px #7F7F7F;
-//   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   // .card-link {
-//   //   position: absolute;
-//   //   top: 0;
-//   //   bottom: 0;
-//   //   left: 0;
-//   //   right: 0;
-//   // }
-//   // .card-details h3 {
-//   //   font-size: 30px;
-//   // }
-// }
-
-// // ----What LE WAGON gives us----
-// .card {
-//   height: 175px;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-size: cover !important;
-//   background-position: center;
-//   color: white;
-//   position: relative;
-// }
-
-// .card-category {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   font-size: 15px;
-//   text-transform: uppercase;
-// }
-// .card-description {
-//   position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-// }
-// .card-description h2 {
-//   font-size: 24px;
-// }
-// .card-description p {
-//   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
-// }
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-// .card-link:hover {
-//   opacity: 0.1;
-// }
