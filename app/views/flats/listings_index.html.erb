@@ -10,7 +10,6 @@
                 <% @flats.each do |flat| %>
                   <% flat.bookings.each do |booking| %>
                       <li class="booking">
-                        <!-- <img src="images/gab.png" alt="gab" class="listing-avatar"> -->
                         <%= image_tag "apt-beton.jpg", class: "listing-avatar" %>
                         <div class="listing-sender">
                           <h2><%= booking.user.full_name %></h2>
@@ -18,7 +17,6 @@
                         <div class="listing-message">
                           <h2><%= booking.flat.name %></h2>
                           <h3><%= booking.start_date.strftime("%b %d %Y") %> - <%= booking.end_date.strftime("%b %d %Y") %></h3>
-                          <!-- <p><%= booking.total_price %>€</p> -->
                         </div>
                         <% if booking.state == "pending" %>
                           <div class="listing-actions">
