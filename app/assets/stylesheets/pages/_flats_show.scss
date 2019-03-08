@@ -89,7 +89,7 @@
 
 .price_night {
   border-bottom: 1px solid #04536c;
-  margin: 0px 50px;
+  margin: 10px 50px;
 }
 
 .price_total {
@@ -98,16 +98,9 @@
   margin-bottom: 20px;
 }
 
-#booking-dates {
-  margin: 20px;
-  padding-bottom: 10px;
-}
 
 .date.required.form-control{
   display: inline-block;
-  width: 32%;
+  width: 70%;
 }
 
-.booking-dates {
-  padding-top: 10px;
-}

@@ -78,24 +78,30 @@
             <h2> <%= @flat.location %> </h2>
             <p> <%= @flat.description %> </p>
           </div>
+
+          <!-- booking box here -->
           <div class="col-sm-4">
             <div class="booking-box">
               <div class="price_night">
-                <p> Price per night: </p>
-                <h3> € <%= @flat.price_per_night %> </h3>
+                  <p> Price per night: </p>
+                  <h3 class="price-per-night"><%= @flat.price_per_night %>€</h3>
               </div>
 
               <div>
                 <p>When do you want to travel?</p>
                 <%= simple_form_for(@booking) do |f| %>
-                  <%= f.input :start_date, class: "date" %>
-                  <%= f.input :end_date, class: "date" %>
+                  <%= f.input :start_date, as: :date, html5: true %>
+                  <%= f.input :end_date, as: :date, html5: true %>
                   <%= f.input :flat_id, as: :hidden, input_html: { value: @flat.id } %>
                   <%= f.input :total_price, as: :hidden, input_html: { value: @flat.price_per_night }%>
-                  <div class="price_total">
+                  <div class="price_total hidden">
                     <p> Total price: </p>
-                    <h3> € <%= @flat.price_per_night %> </h3>
+                    <h3 id="total-price">€</h3>
                   </div>
+                  <div class="price_total_none hidden">
+                    <p> Please set your travel dates to display total price </p>
+                  </div>
+
                   <%= f.submit "Request Booking", class: "btn btn-danger" %>
                 <% end %>
               </div>
