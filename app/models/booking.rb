@@ -20,8 +20,7 @@ class Booking < ApplicationRecord
 
   def trip_before_today
     return if end_date.blank? || start_date.blank?
-
-    if Time.now >= end_date && start_date
+    if Date.today > start_date
       errors.add(:start_date, "must be at least today")
     end
   end
