@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :new, :create, :edit, :update]
-  resources :bookings, only: [:index, :create, :update, :destroy, :edit]
+  resources :bookings, only: [:index, :create, :update, :destroy]
   get '/listings', to: 'flats#listings_index', as: :listings
 end
