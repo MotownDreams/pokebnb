@@ -90,6 +90,13 @@
 
               <div>
                 <p>When do you want to travel?</p>
+                <% if @booking.errors.any? %>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <%= @booking.errors.full_messages.join(",") %>
+                  </div>
+                </div>
+                <% end %>
                 <%= simple_form_for(@booking) do |f| %>
                   <%= f.input :start_date, as: :date, html5: true %>
                   <%= f.input :end_date, as: :date, html5: true %>
